@@ -57,10 +57,9 @@ function playerMove(move){
 
         const div = document.createElement('div')
     let resultShow = document.querySelector('.result-texts')
-    div.append(playerChoose)
+    // div.append(playerChoose)
+    div.innerText = playerChoose
     resultShow.append(div)
-
-
 }
 
 const rockBtn = document.querySelector('.rock')

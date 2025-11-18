@@ -55,12 +55,12 @@ function playerMove(move){
         }
     }
 
-        const div = document.createElement('div')
+
+
     let resultShow = document.querySelector('.result-texts')
-    // div.append(playerChoose)
-    div.innerText = playerChoose
-    resultShow.append(div)
+    resultShow.innerText = playerChoose
 }
+
 
 const rockBtn = document.querySelector('.rock')
 const paperBtn = document.querySelector('.paper')

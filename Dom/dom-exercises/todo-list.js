@@ -3,14 +3,17 @@ let todoItem = [
     {name : 'Watching tutorial'}
 ]
 
+const div = document.querySelector('.js-todo-items')
+
+
 renderTodo()
 
 function renderTodo(){
     let todoHtml = ''
     todoItem.forEach((value , index) => {
-        const {name} = value
         let html = `
-        <div>${name}
+        <div class="child" data-index = "${index}">
+        ${value.name}
         
         <button class="remove-btn">Remove</button>
         </div>
@@ -19,18 +22,19 @@ function renderTodo(){
     })
 
 
-    const div = document.querySelector('.js-todo-items')
-    .innerHTML = todoHtml
+    div.innerHTML = todoHtml
 
-
-const removeBtn = document.querySelectorAll('.remove-btn')
-    removeBtn.forEach((btn , index) => {
-        btn.addEventListener('click' , () => {
-            todoItem.splice(index, 1)
-            renderTodo()
-        })
-    })
+div.addEventListener('click' , e => {
+    if(e.target.classList.contains('remove-btn')){
+        const parent = e.target.closest('.child')
+        const index = parent.dataset.index
+        todoItem.splice(index, 1)
+        renderTodo()
+    }
+})
 }
+
+
 
 
 document.querySelector('.add').addEventListener('click' , (e) => {

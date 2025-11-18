@@ -55,8 +55,7 @@ body.append(newDiv)
 // this how we can hadles the clicks
 // const list = document.querySelector('.list')
 
-// function handler(e){
-    
+// function handler(e){    
 //     if(e.target.matches('.item')){
 //         console.log('you have click on' , e.target.innerText)
 //     }
@@ -70,13 +69,3 @@ body.append(newDiv)
 // },  2000)
 
 
-// const items = ["Apple", "Banana", "Mango", "Grape"];
-
-// function fetchResults(query) {
-//     const filtered = items.filter(item => 
-//         item.toLowerCase().includes(query.toLowerCase())
-//     );
-//         console.log("Matches:", filtered);
-
-// }
-// fetchResults('Apple')

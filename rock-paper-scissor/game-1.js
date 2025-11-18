@@ -17,6 +17,12 @@ function computerMove(){
 
 }
 
+let score = {
+    wins: 0,
+    lose: 0,
+    tie: 0
+}
+
 
 function playerMove(move){
     let computer = computerMove()
@@ -55,10 +61,12 @@ function playerMove(move){
         }
     }
 
-
+    
 
     let resultShow = document.querySelector('.result-texts')
     resultShow.innerText = playerChoose
+    document.querySelector('.computer-move')
+    .innerText = `You Picked - ${move} , Computer Picked - ${computer}`
 }
 
 

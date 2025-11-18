@@ -55,9 +55,7 @@ function playerMove(move){
         }
     }
 
-    let html = `
-    <div>${playerChoose}</div>
-    `
+    
 
 
 }

@@ -24,6 +24,12 @@ let score = {
 }
 
 
+    const emoji = {
+      Rock: "🪨",
+      Paper: "📄",
+      Scissor: "✂️"
+    };
+
 function playerMove(move){
     let computer = computerMove()
     let playerChoose = ''
@@ -75,10 +81,9 @@ function playerMove(move){
     let resultShow = document.querySelector('.result-texts')
     resultShow.innerText = playerChoose
     document.querySelector('.computer-move')
-    .innerText = `You Picked - ${move} , Computer Picked - ${computer}`
+    .innerText = `You Picked - ${emoji[move]} , Computer Picked - ${emoji[computer]}`
 }
 
-console.log(score)
 
 
 const rockBtn = document.querySelector('.rock')

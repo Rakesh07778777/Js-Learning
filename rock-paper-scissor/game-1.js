@@ -17,11 +17,16 @@ function computerMove(){
 
 }
 
-let score = {
+let score = JSON.parse(localStorage.getItem('score')) || {
     wins: 0,
     lose: 0,
     tie: 0
 }
+
+function saveScore(){
+    localStorage.setItem('score' , JSON.stringify(score))
+}
+
 
 
     const emoji = {
@@ -75,15 +80,35 @@ function playerMove(move){
         score.tie += 1
     }
 
-    document.querySelector('.score-board')
+    saveScore()
+
+    const scoreBoard = document.querySelector('.score-board')
     .innerText = `Wins ${score.wins}, Losses ${score.lose} , Tie ${score.tie}`
 
     let resultShow = document.querySelector('.result-texts')
     resultShow.innerText = playerChoose
     document.querySelector('.computer-move')
     .innerText = `You Picked - ${emoji[move]} , Computer Picked - ${emoji[computer]}`
+
 }
 
+    const resetDiv = document.querySelector('.reset')
+    const resetBtn = document.createElement('button')
+    resetBtn.innerText = 'Reset'
+    resetDiv.append(resetBtn)
+    resetBtn.addEventListener('click' ,() => {
+        score.wins = 0,
+        score.lose = 0,
+        score.tie = 0
+        localStorage.removeItem('score')
+        saveScore()
+        document.querySelector('.score-board')
+        .innerText =  `Wins ${score.wins}, Losses ${score.lose} , Tie ${score.tie}`
+        document.querySelector('.result-texts')
+        .innerText = ''
+        document.querySelector('.computer-move')
+        .innerText = ''
+    })
 
 
 const rockBtn = document.querySelector('.rock')

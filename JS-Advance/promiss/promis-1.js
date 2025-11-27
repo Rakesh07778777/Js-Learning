@@ -106,7 +106,6 @@ async function getAllUsers() {
         console.log('Err :' , error)
     }
 }
-
 getAllUsers()
 
 

@@ -31,6 +31,7 @@ task2
 
 const randomNUmber = new Promise((resolve , reject) => {
     let number = Math.floor(Math.random() * 10) 
+    console.log(number)
     if(number > 5){
         resolve('the number is greater than 5')
     } else{

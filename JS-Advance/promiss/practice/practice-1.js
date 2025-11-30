@@ -64,6 +64,8 @@ thirdPractice.then((num) => {
 
 */
 
+/*
+
 function checkPassword(pass){
     return new Promise((resolve, reject) => {
         if(pass === 'secret'){
@@ -87,3 +89,26 @@ async function runCheck(){
 }
 
 runCheck()
+*/
+
+const p1 = new Promise((resolve , reject) => {
+        setTimeout(() => {
+            resolve('Resolve first')
+        } , 1000)
+})
+
+const p2 = new Promise((resolve , reject) => {
+    setTimeout(() => {
+        resolve('Resolve second')
+    }, 2000)
+})
+
+const p3 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve('Resolve third')
+    } , 500)
+})
+
+Promise.all([p1 , p2, p3]).then((values) => {
+    console.log(values)
+})

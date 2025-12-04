@@ -27,3 +27,38 @@ console.log(s1.getDetails())
 
 */
 
+//Getters and Setters (like controlled access)
+
+class BankAccount{
+    constructor(owner, balance){
+        this.owner = owner
+        this._balance = balance
+    }
+
+    get balance(){
+        return `${this._balance} Available`
+    }
+
+    set balance(amount){
+        if(amount < 0){
+            console.log(`${amount} this amount is invalid`)
+            return;
+        }
+
+        this._balance = amount        
+    }
+
+   deposit(amount) {
+    this._balance += amount
+   }
+}
+
+const acc = new BankAccount('Rakesh' , 1000)
+
+console.log(acc.balance)
+
+acc.balance = -2
+
+acc.deposit(500)
+console.log(acc.balance);
+
